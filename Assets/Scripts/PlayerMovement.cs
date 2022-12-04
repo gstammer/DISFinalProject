@@ -2,25 +2,37 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum State
+{
+    FLYING,
+    WALKING
+}
+
 public class PlayerMovement : MonoBehaviour
 {
+
     // Start is called before the first frame update
     public CharacterController controller;
 
     public float speed = 12f;
     public float gravity = -9.81f;
+    public float flightSpeed = 2f;
 
-    Vector3 velocity;
+
 
     public Transform groundCheck;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
+    public State state;
+
+
+    Vector3 velocity;
     bool isGrounded;
 
 
     void Start()
     {
-        
+        state = State.WALKING;
     }
 
     // Update is called once per frame
@@ -37,6 +49,13 @@ public class PlayerMovement : MonoBehaviour
         float z = Input.GetAxis("Vertical");
 
         Vector3 move = transform.right * x + transform.forward * z;
+
+        if (Input.GetKey(KeyCode.Space))
+        {
+            move.y = flightSpeed;
+        }
+
+        Debug.Log(move);
 
         controller.Move(move * speed * Time.deltaTime);
 
