@@ -77,12 +77,19 @@
 				float NdotL = dot(_WorldSpaceLightPos0, normal);
 				float shadow = SHADOW_ATTENUATION(i);
 				float lightIntensity = smoothstep(0, 0.01, NdotL * shadow);
+
+				
+
 				float4 light = lightIntensity * _LightColor0;
 
 				float3 viewDir = normalize(i.viewDir);
 
 				float3 halfVector = normalize(_WorldSpaceLightPos0 + viewDir);
 				float NdotH = dot(normal, halfVector);
+
+				float middle1Intensity = pow(NdotH * lightIntensity, 2);
+				float middle1IntensitySmooth = smoothstep(0.005, 0.01, middle1Intensity);
+				float4 mid1color = middle1IntensitySmooth * float4(0.1, 0.1, 0.1, 1);
 
 				float specularIntensity = pow(NdotH * lightIntensity, _Glossiness * _Glossiness);
 				float specularIntensitySmooth = smoothstep(0.005, 0.01, specularIntensity);
@@ -95,7 +102,7 @@
 
 				float4 sample = tex2D(_MainTex, i.uv);
 
-				return _Color * sample * (_AmbientColor + light + specular + rim);
+				return _Color * sample * (_AmbientColor + light + mid1color + specular + rim);
 			}
 			ENDCG
 		}
