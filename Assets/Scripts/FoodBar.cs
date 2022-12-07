@@ -15,9 +15,11 @@ public class FoodBar : MonoBehaviour
 
     public Image[] bars;
     public  float currVal, maxVal = 100f;
+    public float damagePerSecond = 1.5f;
     private float maxBarVal = 25; //Max health for each bar
     private int getCurrentBarIdx() => Mathf.FloorToInt(currVal / maxVal * bars.Length);
     private float getCurrentBarHealth() => currVal % maxBarVal / maxBarVal;
+    
 
     void Start()
     {
@@ -28,6 +30,7 @@ public class FoodBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        currVal -= Mathf.Max(0, damagePerSecond * Time.deltaTime);
         currVal = Mathf.Min(Mathf.Max(0, currVal), maxVal);
         FillHealthBar();
     }
