@@ -388,13 +388,6 @@ namespace StarterAssets
                 AudioSource.PlayClipAtPoint(LandingAudioClip, transform.TransformPoint(_controller.center), FootstepAudioVolume);
             }
         }
-        private void OnCollisionEnter(Collision collision)
-        {
-            Debug.Log("Player collided with " + collision.gameObject);
-            if (collision.gameObject.CompareTag("Goal")) {
-
-                GameManager.instance.nextScene();
-            }
-        }
+       
     }
 }
