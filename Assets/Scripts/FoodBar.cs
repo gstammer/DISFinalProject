@@ -30,6 +30,9 @@ public class FoodBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (getCurrentBarHealth() == 0) {
+           GameManager.instance.restartScene();
+        }
         currVal -= Mathf.Max(0, damagePerSecond * Time.deltaTime);
         currVal = Mathf.Min(Mathf.Max(0, currVal), maxVal);
         FillHealthBar();

@@ -7,23 +7,19 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public List<GameObject> targets;
-    public TextMeshProUGUI healthText;
-    public TextMeshProUGUI gameOverText;
-    public Button restartButton;
-    public GameObject titleScreen;
+    public static GameManager instance;
+    public int sceneNum;
 
-    public int health = -1;
-    public float spawnRate = 1f;
-    public bool active = false;
-    
 
+
+    void Awake()
+    {
+        MakeSingleton();
+    }
     // Start is called before the first frame update
     void Start()
     {
-        titleScreen.SetActive(true);
-        
-        UpdateHealth(1);
+        sceneNum = 0;
     }
 
     // Update is called once per frame
@@ -32,47 +28,30 @@ public class GameManager : MonoBehaviour
         //if (active) titleScreen.gameObject.SetActive(false);
     }
 
-    IEnumerator SpawnTarget()
+    private void MakeSingleton()
     {
-        while (active)
+        if (instance != null)
         {
-            yield return new WaitForSeconds(spawnRate);
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
 
-            int index = Random.Range(0, targets.Count);
-
-            Instantiate(targets[index]);
         }
 
     }
-
-    public void UpdateHealth(int amount)
-    {
-        health += amount;
-        healthText.text = "Heath: " + health;
+    public void restartScene() {
+        SceneManager.LoadScene(sceneNum);
     }
+    public void nextScene() {
+        sceneNum++;
+        if (sceneNum > 1) {
+            sceneNum = 0;
+        }
+        SceneManager.LoadScene(sceneNum);
 
-    public void GameOver()
-    {
-        active = false;
-        gameOverText.gameObject.SetActive(true);
-        restartButton.gameObject.SetActive(true);
-
-    }
-
-    public void StartGame()
-    {
-        active = true;
-        health = 0;
-        StartCoroutine(SpawnTarget());
-        titleScreen.gameObject.SetActive(false);
-
-    }
-
-    public void RestartGame()
-    {
-        gameOverText.gameObject.SetActive(false);
-        restartButton.gameObject.SetActive(false);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
 
