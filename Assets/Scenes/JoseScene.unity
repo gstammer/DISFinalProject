@@ -643,10 +643,10 @@ GameObject:
   - component: {fileID: 253161648}
   - component: {fileID: 253161647}
   - component: {fileID: 253161646}
-  - component: {fileID: 253161645}
   - component: {fileID: 253161649}
   - component: {fileID: 253161650}
   - component: {fileID: 253161651}
+  - component: {fileID: 253161652}
   m_Layer: 3
   m_Name: EndGoal
   m_TagString: Goal
@@ -654,20 +654,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &253161645
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 253161643}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &253161646
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -726,7 +712,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 253161643}
   m_LocalRotation: {x: -0.5, y: 0.5, z: -0.5, w: -0.5}
-  m_LocalPosition: {x: 6.21, y: 5.52, z: 5.56}
+  m_LocalPosition: {x: 5.9, y: 5.52, z: 5.56}
   m_LocalScale: {x: 0.48401248, y: 10, z: -0.9895286}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -779,6 +765,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 8.307394, y: 0, z: 10}
   m_Center: {x: -0.8463144, y: 0, z: 0}
+--- !u!64 &253161652
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 253161643}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &317611664
 GameObject:
   m_ObjectHideFlags: 0
