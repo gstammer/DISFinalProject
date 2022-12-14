@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class FoodBar : MonoBehaviour
 {
@@ -24,14 +25,14 @@ public class FoodBar : MonoBehaviour
     void Start()
     {
         maxBarVal = maxVal / bars.Length;
-        currVal = 30f;
+        //currVal = 30f;
     }
 
     // Update is called once per frame
     void Update()
     {
         if (currVal <= 0) {
-           GameManager.instance.restartScene();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
         currVal -= Mathf.Max(0, damagePerSecond * Time.deltaTime);
         currVal = Mathf.Min(Mathf.Max(0, currVal), maxVal);
