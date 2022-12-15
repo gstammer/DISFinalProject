@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public int sceneNum;
+    public GameObject UIGameOver;
 
 
 
@@ -16,6 +17,7 @@ public class GameManager : MonoBehaviour
     {
         MakeSingleton();
     }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,6 +44,7 @@ public class GameManager : MonoBehaviour
         }
 
     }
+
     public void restartScene() {
         SceneManager.LoadScene(sceneNum);
     }
