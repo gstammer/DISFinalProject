@@ -20,11 +20,15 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Vector3.Distance(transform.position, target) < 1)
+        //Debug.Log("Distance" + Vector3.Distance(transform.position, target));
+        if (Vector3.Distance(transform.position, target) < 6)
         {
+            
             UpdateDestination();
             IterateWaypointIndex();
         }
+
+        Debug.Log(waypointIndex);
         
     }
 
