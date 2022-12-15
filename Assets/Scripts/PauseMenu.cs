@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -13,11 +14,13 @@ public class PauseMenu : MonoBehaviour
     //public GameObject mainCam, UICam;
 
 
-    private int btnIdx = 0;
+    //private int btnIdx = 0;
+    //private CursorLockMode gameCursor;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        //gameCursor = Cursor.lockState;
     }
 
     // Update is called once per frame
@@ -68,6 +71,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
+        Cursor.lockState = CursorLockMode.None;
         //mainCam.SetActive(false);
         //UICam.SetActive(true);
     }
@@ -77,6 +81,23 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
+        Cursor.lockState = CursorLockMode.Locked;
         //mainCam.SetActive(true);
+    }
+
+    public void Restart()
+    {
+        Time.timeScale = 1f;
+        GameIsPaused = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void Menu()
+    {
+        Time.timeScale = 1f;
+        GameIsPaused = false;
+        Cursor.lockState = CursorLockMode.None;
+        SceneManager.LoadScene(0);
     }
 }

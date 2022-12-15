@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Scene 2.unity
     guid: b07698bdb99c0485494c5a5549d7a7da
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Solve Scene 2.unity
     guid: cf9647347d6544dc8bca26bc53d90767
   - enabled: 0
