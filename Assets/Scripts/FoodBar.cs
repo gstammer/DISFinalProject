@@ -14,13 +14,18 @@ public class FoodBar : MonoBehaviour
      * Fill the current by: (curr % maxBar) / maxBar)
      */
 
+    public GameObject UIGameOver;
     public Image[] bars;
     public  float currVal, maxVal = 100f;
     public float damagePerSecond = 1.5f;
     private float maxBarVal = 25; //Max health for each bar
     private int getCurrentBarIdx() => Mathf.FloorToInt(currVal / maxVal * bars.Length);
     private float getCurrentBarHealth() => currVal % maxBarVal / maxBarVal;
-    
+
+    private IEnumerator waitAndReload(int waitTime) {
+        yield return new WaitForSeconds(waitTime);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
 
     void Start()
     {
@@ -32,7 +37,9 @@ public class FoodBar : MonoBehaviour
     void Update()
     {
         if (currVal <= 0) {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            UIGameOver.SetActive(true);
+            StartCoroutine(waitAndReload(2));
+            
         }
         currVal -= Mathf.Max(0, damagePerSecond * Time.deltaTime);
         currVal = Mathf.Min(Mathf.Max(0, currVal), maxVal);
