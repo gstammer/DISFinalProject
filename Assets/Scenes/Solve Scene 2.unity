@@ -4332,6 +4332,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneNum: 0
+  UIGameOver: {fileID: 0}
 --- !u!4 &1865603490
 Transform:
   m_ObjectHideFlags: 0
@@ -4792,7 +4793,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 9e7dbf38079f5714aaaebfec814c11d6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 20.04
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 9e7dbf38079f5714aaaebfec814c11d6, type: 3}
       propertyPath: m_LocalRotation.w
