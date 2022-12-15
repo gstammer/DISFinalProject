@@ -32,9 +32,7 @@ public class FoodScript : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Burger collided with something " + collision.gameObject);
         if (collision.gameObject.CompareTag("Player")) {
-            Debug.Log("Fund the player");
             foodBar.GetComponent<FoodBar>().increaseByFood();
             Destroy(gameObject);
         }
