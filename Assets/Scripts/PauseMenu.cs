@@ -11,8 +11,8 @@ using UnityEngine.SceneManagement;
  */
 public class PauseMenu : MonoBehaviour
 {
-    public static bool GameIsPaused = false;
-    public static bool GameIsOver = false;
+    public bool GameIsPaused = false;
+    public bool GameIsOver = false;
     public GameObject pauseMenuUI;
     public GameObject foodBar;
     public GameObject gameOverUI;
@@ -27,7 +27,7 @@ public class PauseMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //gameCursor = Cursor.lockState;
+    
     }
 
     // Update is called once per frame
@@ -51,6 +51,11 @@ public class PauseMenu : MonoBehaviour
         if (health <= 0 && !GameIsOver)
         {
             Over();
+        }
+
+        if (!GameIsOver && !GameIsPaused)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
         }
 
         /**
@@ -113,6 +118,7 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
         GameIsPaused = false;
+        GameIsOver = false;
         Cursor.lockState = CursorLockMode.Locked;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
@@ -121,6 +127,7 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
         GameIsPaused = false;
+        GameIsOver = false;
         Cursor.lockState = CursorLockMode.None;
         SceneManager.LoadScene(0);
     }

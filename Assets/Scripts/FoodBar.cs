@@ -25,11 +25,6 @@ public class FoodBar : MonoBehaviour
     private float getCurrentBarHealth() => currVal % maxBarVal / maxBarVal;
     
 
-    private IEnumerator waitAndReload(int waitTime) {
-        yield return new WaitForSeconds(waitTime);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
-
     void Start()
     {
         maxBarVal = maxVal / bars.Length;
