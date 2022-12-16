@@ -9,9 +9,12 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public int sceneNum;
-    public GameObject UIGameOver;
 
-
+    public Dictionary<string, string> scences = new Dictionary<string, string>
+    {
+        {"Level1", "KitchenLevel"},
+        {"KitchenLevel", "UI"},
+    };
 
     void Awake()
     {
@@ -50,11 +53,13 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(sceneNum);
     }
     public void nextScene() {
-        sceneNum++;
-        if (sceneNum > 1) {
-            sceneNum = 0;
-        }
-        SceneManager.LoadScene(sceneNum);
+        //sceneNum++;
+        //if (sceneNum > 1) {
+        //    sceneNum = 0;
+        //}
+        //SceneManager.LoadScene(sceneNum);
+
+        SceneManager.LoadScene(scences[SceneManager.GetActiveScene().name]);
 
     }
 }

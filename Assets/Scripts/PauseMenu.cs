@@ -5,12 +5,18 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+/**
+ *  Control both Game Over and Pause screen 
+ *
+ */
 public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI;
+    public GameObject foodBar;
+    public GameObject gameOverUI;
 
-    public List<Button> buttons;
+    //public List<Button> buttons;
     //public GameObject mainCam, UICam;
 
 
@@ -26,15 +32,23 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        var health = foodBar.GetComponent<FoodBar>().getHealth();
+        if (health > 0)
         {
-            if (GameIsPaused)
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
-                Resume();
-            } else
-            {
-                Pause();
+                if (GameIsPaused)
+                {
+                    Resume();
+                }
+                else
+                {
+                    Pause();
+                }
             }
+        } else
+        {
+            Over();
         }
 
         /**
@@ -64,6 +78,13 @@ public class PauseMenu : MonoBehaviour
         **/
 
 
+    }
+
+    private void Over()
+    {
+        pauseMenuUI.SetActive(false);
+        gameOverUI.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
     }
 
     public void Pause()
