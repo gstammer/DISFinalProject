@@ -8,6 +8,7 @@ public class EnemyAI : MonoBehaviour
     NavMeshAgent agent;
     public Transform[] waypoints;
     int waypointIndex;
+    public float dist = 1;
     Vector3 target;
 
     // Start is called before the first frame update
@@ -20,12 +21,12 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Vector3.Distance(transform.position, target) < 1)
+        if (Vector3.Distance(transform.position, target) < dist)
         {
             UpdateDestination();
             IterateWaypointIndex();
         }
-        
+        Debug.Log(Vector3.Distance(transform.position, target) + ", " + waypointIndex);
     }
 
     void UpdateDestination()
