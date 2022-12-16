@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657815, g: 0.49641192, b: 0.57481617, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -647,6 +647,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &113545760 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 99f38f87bc7e4484fb605a82e45b0cde, type: 3}
+  m_PrefabInstance: {fileID: 1597819607}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &113545763
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 113545760}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4, y: 8.5, z: 2.5}
+  m_Center: {x: 2, y: 4.25, z: 1.25}
 --- !u!1001 &118936531
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -870,81 +888,6 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: e7b3421c09d9c49798f41bb9edaada48, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e7dbf38079f5714aaaebfec814c11d6, type: 3}
---- !u!1 &198901219
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 198901222}
-  - component: {fileID: 198901221}
-  m_Layer: 0
-  m_Name: UICamera
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!20 &198901221
-Camera:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 198901219}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_ClearFlags: 3
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_projectionMatrixMode: 1
-  m_GateFitMode: 2
-  m_FOVAxisMode: 0
-  m_SensorSize: {x: 36, y: 24}
-  m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
-  m_NormalizedViewPortRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 60
-  orthographic: 0
-  orthographic size: 5
-  m_Depth: 10
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 32
-  m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
-  m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
-  m_StereoConvergence: 10
-  m_StereoSeparation: 0.022
---- !u!4 &198901222
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 198901219}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 191.15656, y: 234.23886, z: -2.3874288}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &209712972 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: bedb30ff92956524fab8584a038544e8, type: 3}
@@ -1409,7 +1352,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0.000061035156, y: 197.99991}
+  m_AnchoredPosition: {x: 0.000061035156, y: 125}
   m_SizeDelta: {x: 500, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &370506884
@@ -4353,7 +4296,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 922855886493675917, guid: e4d20ee202d2840fa892d4703703941a, type: 3}
       propertyPath: currVal
-      value: 14
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 922855886493675917, guid: e4d20ee202d2840fa892d4703703941a, type: 3}
       propertyPath: UIGameOver
@@ -4363,6 +4306,10 @@ PrefabInstance:
       propertyPath: UIPauseMenu
       value: 
       objectReference: {fileID: 1029786634}
+    - target: {fileID: 922855886493675917, guid: e4d20ee202d2840fa892d4703703941a, type: 3}
+      propertyPath: damagePerSecond
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2156349102660009489, guid: e4d20ee202d2840fa892d4703703941a, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -4466,7 +4413,7 @@ PrefabInstance:
     - target: {fileID: 2852780374024016801, guid: e4d20ee202d2840fa892d4703703941a, type: 3}
       propertyPath: m_Camera
       value: 
-      objectReference: {fileID: 198901221}
+      objectReference: {fileID: 0}
     - target: {fileID: 2852780374024016801, guid: e4d20ee202d2840fa892d4703703941a, type: 3}
       propertyPath: m_RenderMode
       value: 1
@@ -4494,6 +4441,10 @@ PrefabInstance:
     - target: {fileID: 2852780374024016814, guid: e4d20ee202d2840fa892d4703703941a, type: 3}
       propertyPath: m_ReferenceResolution.y
       value: 1080
+      objectReference: {fileID: 0}
+    - target: {fileID: 5201758282468654183, guid: e4d20ee202d2840fa892d4703703941a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5758879483255251629, guid: e4d20ee202d2840fa892d4703703941a, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -4590,7 +4541,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -3.9999237, y: 67.999725}
+  m_AnchoredPosition: {x: -3.9999237, y: -5.0002136}
   m_SizeDelta: {x: 500, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1340665651
@@ -5607,11 +5558,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 99f38f87bc7e4484fb605a82e45b0cde, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.1595073
+      value: 4.59
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 99f38f87bc7e4484fb605a82e45b0cde, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6.0929403
+      value: 5.52
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 99f38f87bc7e4484fb605a82e45b0cde, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6259,7 +6210,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneNum: 0
-  UIGameOver: {fileID: 0}
 --- !u!4 &1865603490
 Transform:
   m_ObjectHideFlags: 0
@@ -6516,7 +6466,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1967265731 stripped
 GameObject:
@@ -7507,6 +7457,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8946126516066481070, guid: bba5f383151984e0891fe3515dc3b1aa, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5d62db96600e03f46b2cd42ebbdc15ae, type: 2}
     - target: {fileID: 8946126516068740462, guid: bba5f383151984e0891fe3515dc3b1aa, type: 3}
       propertyPath: m_Name
       value: EndWall

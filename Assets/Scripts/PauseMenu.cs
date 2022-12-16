@@ -12,6 +12,7 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
+    public static bool GameIsOver = false;
     public GameObject pauseMenuUI;
     public GameObject foodBar;
     public GameObject gameOverUI;
@@ -35,7 +36,7 @@ public class PauseMenu : MonoBehaviour
         var health = foodBar.GetComponent<FoodBar>().getHealth();
         if (health > 0)
         {
-            if (Input.GetKeyDown(KeyCode.Escape))
+            if (Input.GetKeyDown(KeyCode.Escape) && !GameIsOver)
             {
                 if (GameIsPaused)
                 {
@@ -46,7 +47,8 @@ public class PauseMenu : MonoBehaviour
                     Pause();
                 }
             }
-        } else
+        }
+        if (health <= 0 && !GameIsOver)
         {
             Over();
         }
@@ -82,6 +84,7 @@ public class PauseMenu : MonoBehaviour
 
     private void Over()
     {
+        GameIsOver = true;
         pauseMenuUI.SetActive(false);
         gameOverUI.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
