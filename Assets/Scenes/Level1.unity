@@ -927,7 +927,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d35a90eaac516542bd8b81630e6a96d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodBar: {fileID: 0}
+  foodBar: {fileID: 1625853069}
   bobbingHeight: 0.3
   bobbingRate: 0.005
 --- !u!54 &296896815
@@ -3955,6 +3955,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 99f38f87bc7e4484fb605a82e45b0cde, type: 3}
+--- !u!1 &1625853069 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8394762338492480771, guid: 998ef0c5b30b242b89bac135bf10f5e2, type: 3}
+  m_PrefabInstance: {fileID: 746776008}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1635005955 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 9e7dbf38079f5714aaaebfec814c11d6, type: 3}
