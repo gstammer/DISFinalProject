@@ -19,5 +19,10 @@ public class LevelSelector : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         SceneManager.LoadScene(sceneName);
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
     
 }

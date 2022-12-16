@@ -131,4 +131,9 @@ public class PauseMenu : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         SceneManager.LoadScene(0);
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }
