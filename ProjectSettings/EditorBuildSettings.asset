@@ -23,5 +23,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/KitchenLevel.unity
     guid: 4900349f380b14d4889adbb6c337a88e
+  - enabled: 1
+    path: Assets/Scenes/WinScreen.unity
+    guid: afaa96173bec1480cbe58ceeaa9c91ed
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9e7be553448fa2546aea5752021cbcf7, type: 2}

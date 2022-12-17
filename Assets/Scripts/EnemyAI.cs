@@ -26,7 +26,7 @@ public class EnemyAI : MonoBehaviour
             UpdateDestination();
             IterateWaypointIndex();
         }
-        Debug.Log(Vector3.Distance(transform.position, target) + ", " + waypointIndex);
+        //Debug.Log(Vector3.Distance(transform.position, target) + ", " + waypointIndex);
     }
 
     void UpdateDestination()

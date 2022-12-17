@@ -9,11 +9,12 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public int sceneNum;
+    public AudioSource doorSource;
 
     public Dictionary<string, string> scences = new Dictionary<string, string>
     {
         {"Level1", "KitchenLevel"},
-        {"KitchenLevel", "UI"},
+        {"KitchenLevel", "Level1"},
     };
 
     void Awake()
@@ -25,6 +26,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         sceneNum = 0;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
@@ -58,6 +60,8 @@ public class GameManager : MonoBehaviour
         //}
         //SceneManager.LoadScene(sceneNum);
 
+        Debug.Log("Called next scene");
+        doorSource.Play();
         SceneManager.LoadScene(scences[SceneManager.GetActiveScene().name]);
 
     }

@@ -8,6 +8,7 @@ public class FoodScript : MonoBehaviour
     public GameObject foodBar;
     public float bobbingHeight = 0.5f;
     public float bobbingRate = 0.05f;
+    public AudioSource source;
 
     private Vector3 startPos;
     private Vector3 topPos;
@@ -34,6 +35,7 @@ public class FoodScript : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player")) {
             foodBar.GetComponent<FoodBar>().increaseByFood();
+            source.Play();
             Destroy(gameObject);
         }
     }
