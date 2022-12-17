@@ -15,6 +15,7 @@ namespace StarterAssets
 #endif
     public class ThirdPersonController : MonoBehaviour
     {
+        //public AudioSource doorAudioSource;
         [Header("Player")]
         [Tooltip("Move speed of the character in m/s")]
         public float MoveSpeed = 2.0f;
@@ -395,7 +396,9 @@ namespace StarterAssets
             //Debug.Log("End goal collided with " + hit.collider.gameObject);
             if (hit.collider.gameObject.CompareTag("Goal"))
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                //doorAudioSource.Play();
+                Debug.Log(GameManager.instance);
+                GameManager.instance.nextScene();
             }
         }
 
