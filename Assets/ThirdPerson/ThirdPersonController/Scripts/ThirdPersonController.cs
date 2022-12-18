@@ -397,6 +397,7 @@ namespace StarterAssets
             if (hit.collider.gameObject.CompareTag("Goal"))
             {
                 //doorAudioSource.Play();
+                FindObjectOfType<AudioManager>().Play("doorSound");
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
         }

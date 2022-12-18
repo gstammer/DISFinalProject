@@ -17,7 +17,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject foodBar;
     public GameObject gameOverUI;
 
-    public AudioSource dieAudioSource;
+    //public AudioSource dieAudioSource;
 
     //public List<Button> buttons;
     //public GameObject mainCam, UICam;
@@ -95,7 +95,9 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(false);
         gameOverUI.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
-        dieAudioSource.Play();
+
+        FindObjectOfType<AudioManager>().Play("deathSound");
+        //dieAudioSource.Play();
     }
 
     public void Pause()
