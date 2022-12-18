@@ -15,11 +15,11 @@ EditorBuildSettings:
     path: Assets/Scenes/JoseScene.unity
     guid: 5b53ec3732961d340925e41a569d1599
   - enabled: 1
-    path: Assets/Scenes/Tutorial.unity
-    guid: 0c5459ae0650e7943bf9ac87ba524480
-  - enabled: 1
     path: Assets/Scenes/UI.unity
     guid: 6744c13367a0d43efb9a30a53cfe08c2
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: 0c5459ae0650e7943bf9ac87ba524480
   - enabled: 1
     path: Assets/Scenes/Level1.unity
     guid: 29ba5e75b85584e43af5810521ef600c
