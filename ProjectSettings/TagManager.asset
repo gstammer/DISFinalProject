@@ -7,6 +7,7 @@ TagManager:
   - CinemachineTarget
   - Goal
   - Platform
+  - Rumba
   layers:
   - Default
   - TransparentFX

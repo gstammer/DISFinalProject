@@ -16,6 +16,7 @@ namespace StarterAssets
     public class ThirdPersonController : MonoBehaviour
     {
         //public AudioSource doorAudioSource;
+        public GameObject foodBar;
         [Header("Player")]
         [Tooltip("Move speed of the character in m/s")]
         public float MoveSpeed = 2.0f;
@@ -399,6 +400,9 @@ namespace StarterAssets
                 //doorAudioSource.Play();
                 FindObjectOfType<AudioManager>().Play("doorSound");
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            } else if (hit.collider.gameObject.CompareTag("Rumba"))
+            {
+                foodBar.GetComponent<FoodBar>().setHealth(0);
             }
         }
 
