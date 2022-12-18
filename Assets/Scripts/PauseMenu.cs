@@ -11,12 +11,13 @@ using UnityEngine.SceneManagement;
  */
 public class PauseMenu : MonoBehaviour
 {
-    public bool GameIsPaused = false;
-    public bool GameIsOver = false;
+    private bool GameIsPaused = false;
+    private bool GameIsOver = false;
     public GameObject pauseMenuUI;
     public GameObject foodBar;
     public GameObject gameOverUI;
 
+    private int soundOnDeath = 0;
     //public AudioSource dieAudioSource;
 
     //public List<Button> buttons;
@@ -96,8 +97,12 @@ public class PauseMenu : MonoBehaviour
         gameOverUI.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
 
-        FindObjectOfType<AudioManager>().Play("deathSound");
-        //dieAudioSource.Play();
+        if (soundOnDeath % 2 == 0)
+        {
+            //Work around for this weird class set up, otherwise, it will duplicate sound
+            FindObjectOfType<AudioManager>().Play("deathSound");
+            soundOnDeath = (soundOnDeath + 1) % 2;
+        }
     }
 
     public void Pause()
